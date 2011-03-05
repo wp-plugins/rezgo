@@ -17,7 +17,7 @@
 	  register_setting( 'rezgo_options', 'rezgo_forward_secure' );
 	  register_setting( 'rezgo_options', 'rezgo_secure_url' );
 	  
-		wp_register_style( 'rezgo_settings_css', REZGO_DIR . '/settings.css' );
+		wp_register_style( 'rezgo_settings_css', plugins_url('/settings.css', __FILE__));
 	}
 	
 	function rezgo_plugin_menu() {
