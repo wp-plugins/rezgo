@@ -38,7 +38,7 @@ You get all the features of the regular Rezgo front-end booking engine plus the 
 
 = Install the Rezgo Booking Plugin =
 
-1. Install the Rezgo Booking plugin in your WordPress admin by going to 'Plugins / Add New' and searching for *'Rezgo'* ** OR ** upload the `rezgo` folder to the `/wp-content/plugins/` directory
+1. Install the Rezgo Booking plugin in your WordPress admin by going to 'Plugins / Add New' and searching for *'Rezgo'* **OR** upload the `rezgo` folder to the `/wp-content/plugins/` directory
 2. Activate the Rezgo plugin through the 'Plugins' menu in WordPress
 3. Add your Rezgo account information in the plugin settings
 4. Use the shortcode [rezgo_shortcode] in your page content
@@ -67,23 +67,26 @@ Yes, absolutely.  The default display templates are stored in the "default" fold
 
 = Can I manage credit card payments on my WordPress site? =
 
-Yes, the Rezgo WordPress plugin has the ability to handle credit card payments.  Make sure to configure your Rezgo account to connect to your payment gateway.  Rezgo supports a growing list of Global payment processors including Authorize.net, PayTrace, Chase Paymentech, Beanstream, Ogone, Eway, and many others.  In order for your site to handle payments, you will need to install a secure certificate.  Check with your web host if you need help installing a secure certificate.  If you do not wish to set-up a secure certificate, you can have the secure booking complete on your Rezgo white label booking engine.
+Yes, the Rezgo WordPress plugin has the ability to handle credit card payments.  Make sure to configure your Rezgo account to connect to your payment gateway.  Rezgo supports a growing list of Global payment processors including Authorize.net, PayTrace, Chase Paymentech, Beanstream, Ogone, Eway, and many others.  In order for your site to handle payments, you will need to install a secure certificate.  Check with your web host if you need help installing a secure certificate.  If you do not wish to set-up a secure certificate, you can have the secure booking complete on your Rezgo hosted booking engine.
 
 = Will the plugin slow down my site? =
 
-No, it's highly unlikely.  The Rezgo plugin is based on the same code as the Rezgo white label booking engine used by hundreds of tour and activity companies.  The plugin connects to the Rezgo XML API which has been optimized to deliver XML results.  Depending on where your WordPress website is hosted, there may be some delay in connecting to the Rezgo server.  If you are experiencing an unreasonable lag in responses, we recommend you consider hosting your website with BlueHost (http://www.tkqlhce.com/click-3178558-10376740).
+No, it's highly unlikely.  The Rezgo plugin is based on the same code as the Rezgo hosted booking engine used by hundreds of tour and activity companies.  The plugin connects to the Rezgo XML API which has been optimized to deliver XML results.  Depending on where your WordPress website is hosted, there may be some delay in connecting to the Rezgo server.  If you are experiencing an unreasonable lag in responses, we recommend you consider hosting your website with BlueHost (http://www.tkqlhce.com/click-3178558-10376740).
 
 = Can I add functionality to the Rezgo WordPress Plugin? =
 
 Yes, you are free to add functionality to the display templates.  We recommend you create a new copy of the templates as updates to the plugin may overwrite any changes you make to the default templates.
 
+= Rezgo doesn't look right, what's wrong? =
+
+Some themes have stylesheet elements that conflict with Rezgo.  You may need to edit your theme stylesheet to remove the conflicts.
+
 == Screenshots ==
 
-1. Rezgo requires an API key to connect to the XML API. The XML API is available for both Suppliers and Vendors, and it is easy to find your API key. Click on the settings tab, and you will see "API Key: [Create API Key]". Once your API has been created, enter it and the Company Code (CID) into your Rezgo WordPress configuration settings.
+1. Your tours and activities are listed along with tags, keyword search, and a date search.
 2. Show all your tour or activity details including rich text, images, videos, and location map.
 3. Your customers choose a date from the calendar to view available options.
 4. Customers select the number of guests and enter a promotional code or coupon if appropriate.
-5. Customers complete the booking checkout and payment on your WordPress site (if secure certificate is installed) or on the default Rezgo white label website.
 
 == Changelog ==
 
