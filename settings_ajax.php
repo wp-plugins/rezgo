@@ -11,7 +11,7 @@
 	if((string)$result->company_name) {
 		echo '<span class="ajax_success">XML API Connected</span><br>
 		<span class="ajax_success_message">'.((string)$result->company_name).'</span> 
-		<a href="http://'.((string)$result->domain).'.rezgo.com" class="ajax_success_url">'.((string)$result->domain).'.rezgo.com</a>';
+		<a href="http://'.((string)$result->domain).'.rezgo.com" class="ajax_success_url" target="_blank">'.((string)$result->domain).'.rezgo.com</a>';
 	} else {
 		echo '<span class="ajax_error">XML API Error</span><br> 
 		<span class="ajax_error_message">'.((string)$result[0]).'</span>';

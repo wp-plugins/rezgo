@@ -68,6 +68,9 @@
 			update_option( "rezgo_result_num ", $_POST['rezgo_result_num'] );
 			update_option( "rezgo_template", $_POST['rezgo_template'] );
 			
+			// since we set this value to 1 as default, make sure it's set to 0 if it's off
+			if(!$_POST['rezgo_forward_secure']) $_POST['rezgo_forward_secure'] = 0;
+			
 			update_option( "rezgo_forward_secure", $_POST['rezgo_forward_secure'] );
 			update_option( "rezgo_secure_url", $_POST['rezgo_secure_url'] );
 		
@@ -89,10 +92,17 @@
 			<ol>
 				<li><a href="http://www.rezgo.com">Sign-up for a Rezgo account</a>.
 				<li>Setup your inventory and configure your account on Rezgo.
-				<li>Copy your Company Code and API KEY from your Rezgo Settings.
 				<li>Complete the Rezgo WordPress Plugin settings below.
 				<li>Create a Post and embed the Rezgo booking engine by using the shortcode: [rezgo_shortcode].
-			</ol>
+				<li>Ensure you are using a non default permalink structure.&nbsp;'.((get_option(permalink_structure) != '') ? 'Your current structure should work!' : '');
+
+					if(get_option(permalink_structure) == '') {
+						echo '<div style="border:1px solid #9E0000; padding: 4px; padding-left:6px; padding-right:6px; background-color: #D97F7E; width:-moz-fit-content;">
+							<strong>currently using [</strong>default<strong>] which may not work correctly! <a href="http://wp3.rezgo.ca/wp-admin/options-permalink.php" style="color:#333333;">Click here</a> to change it.</strong>
+						</div>';
+					}
+					
+			echo '</ol>
 		</p>
 		
 		<form method="post" action="">
@@ -152,7 +162,7 @@
 							if((string)$result->company_name) {
 								echo '<span class="ajax_success">XML API Connected</span><br>
 								<span class="ajax_success_message">'.((string)$result->company_name).'</span> 
-								<a href="http://'.((string)$result->domain).'.rezgo.com" class="ajax_success_url">'.((string)$result->domain).'.rezgo.com</a>';
+								<a href="http://'.((string)$result->domain).'.rezgo.com" class="ajax_success_url" target="_blank">'.((string)$result->domain).'.rezgo.com</a>';
 							} else {
 								echo '<span class="ajax_error">XML API Error</span><br>
 								<span class="ajax_error_message">'.((string)$result[0]).'</span>';
@@ -200,6 +210,13 @@
 					$template_url = str_replace('http://', '', $template_url);
 					$template_url = str_replace($_SERVER['HTTP_HOST'], '', $template_url);
 					
+					// if forward secure is not yet set to anything, check it as default
+					if (get_option('rezgo_forward_secure') === '' || get_option('rezgo_forward_secure') === false) {
+						$forward_secure_checked = 'checked';
+					} else {
+						$forward_secure_checked = (get_option('rezgo_forward_secure')) ? 'checked' : '';
+					}
+					
 					echo '<dt>Number of results:</dt>
 					<dd><input type="text" name="rezgo_result_num" size="5" value="'.$results_num.'" /></dd>		
 			
@@ -225,9 +242,9 @@
 					<br><br>
 					
 					<dt>Forward secure page to Rezgo:</dt>
-					<dd><input type="checkbox" name="rezgo_forward_secure" value="1" '.((get_option('rezgo_forward_secure')) ? 'checked' : '').' onclick="if(this.checked == true) { $(\'#alternate_url\').fadeOut(); } else { $(\'#alternate_url\').fadeIn(); }" /></dd>
+					<dd><input type="checkbox" name="rezgo_forward_secure" value="1" '.$forward_secure_checked.' onclick="if(this.checked == true) { $(\'#alternate_url\').fadeOut(); } else { $(\'#alternate_url\').fadeIn(); }" /></dd>
 					
-					<div id="alternate_url" style="display:'.((get_option('rezgo_forward_secure')) ? 'none' : '').';">
+					<div id="alternate_url" style="display:'.(($forward_secure_checked) ? 'none' : '').';">
 						<dt class=note>By default, Rezgo will use your current domain for the secure site.  If you have another secure domain you want to use (such as secure.mysite.com) you can specify it here. Otherwise leave this blank.</dt>
 						<br><br>
 					
