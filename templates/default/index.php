@@ -209,16 +209,16 @@
  	
  	<? if($backButton) { ?>
 	 	<div class="prev_results">
-	 		<a href="<?=$site->base?>/?pg=<?=($_REQUEST['pg']-1)?><? if($_REQUEST['start_date']) { ?>&start_date=<?=$_REQUEST['start_date']?>&end_date=<?=$_REQUEST['end_date']?><? } ?>">previous page</a> | jump to page:  
+	 		<a href="?pg=<?=($_REQUEST['pg']-1)?><? if($_REQUEST['start_date']) { ?>&start_date=<?=$_REQUEST['start_date']?>&end_date=<?=$_REQUEST['end_date']?><? } ?>">previous page</a> | jump to page:  
 	 		<? for($p=1; $p < $_REQUEST['pg']; $p++) { ?>
-	 			<a href="<?=$site->base?>/?pg=<?=$p?><? if($_REQUEST['start_date']) { ?>&start_date=<?=$_REQUEST['start_date']?>&end_date=<?=$_REQUEST['end_date']?><? } ?>"><?=$p?></a>
+	 			<a href="?pg=<?=$p?><? if($_REQUEST['start_date']) { ?>&start_date=<?=$_REQUEST['start_date']?>&end_date=<?=$_REQUEST['end_date']?><? } ?>"><?=$p?></a>
 	 		<? } ?>
 	 	</div>
  	<? } ?>
  	
  	<? if($moreButton) { ?>
 	 	<div class="more_results">
-	 		<a href="<?=$site->base?>/?pg=<?=$nextPage?><? if($_REQUEST['start_date']) { ?>&start_date=<?=$_REQUEST['start_date']?>&end_date=<?=$_REQUEST['end_date']?><? } ?>">more results</a>
+	 		<a href="?pg=<?=$nextPage?><? if($_REQUEST['start_date']) { ?>&start_date=<?=$_REQUEST['start_date']?>&end_date=<?=$_REQUEST['end_date']?><? } ?>">more results</a>
 	 	</div>
  	<? } ?>
  	
