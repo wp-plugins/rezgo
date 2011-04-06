@@ -9,7 +9,7 @@
 	
 	// we don't want the docroot to be attached since the class does that itself
 	// that way, this directive is usable for the full path and the local path
-	define(	"REZGO_DIR",								str_replace($_SERVER['DOCUMENT_ROOT'], '', WP_PLUGIN_DIR).'/rezgo');
+	define(	"REZGO_DIR",								strstr(preg_replace('/(https?\:\/\/)/', '', WP_PLUGIN_URL), '/').'/rezgo');
 	
 	// this directive is defined in rezgo.php rezgo_set_globals() to capture the current dir
 	//define( "REZGO_URL_BASE",				""																						);

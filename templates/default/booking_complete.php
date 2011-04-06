@@ -90,7 +90,7 @@
 			<input type="hidden" name="quantity" id="quantity" value="1">	
 			<input type="hidden" name="business" value="<?=$company_paypal?>">
 			<input type="hidden" name="currency_code" value="<?=$site->getBookingCurrency()?>">
-			<input type="hidden" name="domain" value="<?=REZGO_URI?>">
+			<input type="hidden" name="domain" value="<?=$site->getDomain()?>.rezgo.com">
 		
 			<input type="hidden" name="cid" value="<?=REZGO_CID?>">
 			<input type="hidden" name="paypal_signature" value="">

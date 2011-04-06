@@ -19,14 +19,14 @@ $paypal[business]="$_POST[business]";
 //live
 //$paypal[site_url]="https://".$_POST[domain].".rezgo.com/";
 //dev
-$paypal[site_url]="https://".$_POST[domain].".rezgo.com/";
+$paypal[site_url]="https://".$_POST[domain]."/";
 
 $paypal[success_url]="complete/".$_POST[encoded_transaction_id];
 $paypal[image_url]="";
 
 $paypal[cancel_url]=$_POST[cancel_return];
 //$paypal[notify_url]="php_paypal/ipn/ipn.php";
-$paypal[notify_url]="php_paypal/ipn/ipn.php";
+$paypal[notify_url]="rezgo/php_paypal/ipn/ipn.php";
 $paypal[return_method]="2"; //1=GET 2=POST
 $paypal[currency_code]="$_POST[currency_code]"; //[USD,GBP,JPY,CAD,EUR]
 $paypal[lc]="US";
