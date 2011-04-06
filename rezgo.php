@@ -3,7 +3,7 @@
 		Plugin Name: Rezgo
 		Plugin URI: http://wordpress.org/extend/plugins/rezgo/
 		Description: Connect WordPress to your Rezgo account and accept online bookings directly on your website.
-		Version: 1.3
+		Version: 1.4
 		Author: Rezgo
 		Author URI: http://www.rezgo.com
 		License: Modified BSD
