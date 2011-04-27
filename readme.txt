@@ -3,8 +3,8 @@ Contributors: rezgo
 Donate link: http://www.rezgo.com/
 Tags: tours, activities, events, attractions, booking, reservation, ticketing, e-commerce, business, rezgo
 Requires at least: 3.0.0
-Tested up to: 3.1.0
-Stable tag: 1.4
+Tested up to: 3.1.2
+Stable tag: 1.4.1
 
 Connect WordPress to your Rezgo account and accept online bookings directly on your website.
 
@@ -101,15 +101,19 @@ Yes, you are free to add functionality to the display templates.  We recommend y
 
 == Changelog ==
 
+= 1.4.1 =
+* Fixed a bug with the details links on the calendar when the month auto-advanced.
+
 = 1.4 =
-* Fixed an issue with the local include path being incorrect on some systems.
-* Fixed some issues with pagination.
-* Added some default configuration settings.
-* Fixed an issue with the calendar not loading if there was no availability.
-* Fixed a number of assorted minor issues.
+* Fixed a number of template path issues.
+* Fixed an issue that would cause the calendar to hang if there was no availability.
+* Added some default settings to the plugin config, including a warning about the default permalink structure.
+* Improved calendar loading speed.
+* Fixed a few issues with the receipt paypal button.
+* Also fixed a whole pile of minor issues.
 
 = 1.3 =
-* Initial release
+* Initial release.
 
 == Upgrade Notice ==
 

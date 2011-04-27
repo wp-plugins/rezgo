@@ -6,7 +6,7 @@
 		$attempt = $_REQUEST['attempt'] + 1;
 		
 		if($attempt <= 12) {
-			$site->sendTo('?item_id='.$_REQUEST['item_id'].'&date='.$site->getCalendarNext().'&jump=1&attempt='.$attempt);
+			$site->sendTo($site->base.'/calendar.php?item_id='.$_REQUEST['item_id'].'&date='.$site->getCalendarNext().'&jump=1&attempt='.$attempt);
 		}
 	}
 
