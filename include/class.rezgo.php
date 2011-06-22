@@ -4,7 +4,7 @@
 		This is the Rezgo parser class, it handles processing for the Rezgo XML.
 		
 		VERSION:
-				1.4.1
+				1.4.2
 		
 		- Documentation and latest version
 				http://support.rezgo.com/developers/rezgo-open-source-php-parser.html
@@ -49,7 +49,7 @@
 
 	class RezgoSite {
 	
-		var $version = '1.4.1';
+		var $version = '1.4.2';
 	
 		var $xml_path;
 		
@@ -127,7 +127,9 @@
 			
 			if(!defined(REZGO_PATH)) define("REZGO_PATH", $this->path);
 			
-			// it's possible to define the document root manually if there is an issue with the _SERVER variable
+			// it's possible to define the document root manually if there is an issue with the path generated here
+			// this path must be to the install directory (not just the document root) to support unusual mod_rewrite
+			// installs or wordpress installs that have hidden install paths.
 			if(!defined(REZGO_DOCUMENT_ROOT)) define("REZGO_DOCUMENT_ROOT", $_SERVER["DOCUMENT_ROOT"]);
 			
 			$this->setSecure($secure);
@@ -364,7 +366,8 @@
 				} 
 			}
 						
-			$path = REZGO_DOCUMENT_ROOT.REZGO_DIR.'/templates/'.REZGO_TEMPLATE.'/';
+			//$path = REZGO_DOCUMENT_ROOT.REZGO_DIR.'/templates/'.REZGO_TEMPLATE.'/';
+			$path = REZGO_DOCUMENT_ROOT.'/templates/'.REZGO_TEMPLATE.'/';
 			
 			$ext = explode(".", $req);
 			$ext = (!$ext[1]) ? '.php' : '';
@@ -390,7 +393,7 @@
 				if($this->config('REZGO_COUNTRY_PATH')) {
 					include(REZGO_COUNTRY_PATH);
 				} else {
-					include(REZGO_DOCUMENT_ROOT.REZGO_DIR.'/include/countries_list.php');	
+					include(REZGO_DOCUMENT_ROOT.'/include/countries_list.php');	
 				}
 				$this->country_list = $countries_list;
 			}
@@ -402,7 +405,7 @@
 			if($this->config('REZGO_COUNTRY_PATH')) {
 				include(REZGO_COUNTRY_PATH);
 			} else {
-				include(REZGO_DOCUMENT_ROOT.REZGO_DIR.'/include/countries_list.php');	
+				include(REZGO_DOCUMENT_ROOT.'/include/countries_list.php');	
 			}
 			
 			if($node) {
