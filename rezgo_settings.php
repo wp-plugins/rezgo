@@ -93,7 +93,7 @@
 				<li><a href="http://www.rezgo.com">Sign-up for a Rezgo account</a>.
 				<li>Setup your inventory and configure your account on Rezgo.
 				<li>Complete the Rezgo WordPress Plugin settings below.
-				<li>Create a page and embed the Rezgo booking engine by using the shortcode: [rezgo_shortcode].
+				<li>Create a Post and embed the Rezgo booking engine by using the shortcode: [rezgo_shortcode].
 				<li>Ensure you are using a non default permalink structure.&nbsp;'.((get_option(permalink_structure) != '') ? 'Your current structure should work!' : '');
 
 					if(get_option(permalink_structure) == '') {
