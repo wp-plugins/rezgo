@@ -1,9 +1,9 @@
 <?php
 	/*
-		Plugin Name: Rezgo
+		Plugin Name: Rezgo Online Booking
 		Plugin URI: http://wordpress.org/extend/plugins/rezgo/
 		Description: Connect WordPress to your Rezgo account and accept online bookings directly on your website.
-		Version: 1.4.1
+		Version: 1.4.2
 		Author: Rezgo
 		Author URI: http://www.rezgo.com
 		License: Modified BSD
@@ -58,7 +58,7 @@
 	require('include/page_header.php');
 		
 	// Settings panel in WP Admin
-	include('settings.php');
+	include('rezgo_settings.php');
 
 	// flush the rewrite rules and add Rezgo rewrite rules upon plugin activation
 	register_activation_hook(__FILE__, 'flush_rewrite_rules');
@@ -140,7 +140,7 @@
 	
 	  //​ add the rewrite rule into top of rules array
 	  $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
-	  
+	 
 	}
 	
 	global $matched_query;
@@ -155,17 +155,28 @@
 		// set globals parsed from rewrite variables
 		parse_str($wp->matched_query, $matched_query);
 		
+		// the pagename can hide under a couple different names
 		$wp_current_page = $wp->query_vars['pagename'];
 		
 		// register the URL vars as _REQUEST superglobals
 		// this way they act like normal mod_rewrite	
 		foreach($matched_query as $k => $v) {
 			$_REQUEST[$k] = $v;
-		}		
+		}
 		
-		define("REZGO_URL_BASE",					"/".$wp_current_page);
+		// extract the wordpress install path, in case we are in a subdirector
+		$res = str_replace('://', '', get_bloginfo('url'));
+		$res = strstr($res, '/');
+		define("REZGO_URL_BASE",					(($wp_current_page) ? $res."/".$wp_current_page : $res));
 		
-		define("REZGO_FATAL_ERROR_PAGE",	REZGO_BASE_PATH."/error.php");
+		// force-define the document root using wordpress's root constant
+		// this contains the full path to the rezgo plugin
+		
+		//define("REZGO_DOCUMENT_ROOT", $_SERVER[DOCUMENT_ROOT]);
+		
+		define("REZGO_DOCUMENT_ROOT", ABSPATH."wp-content/plugins/rezgo/");
+		
+		define("REZGO_FATAL_ERROR_PAGE",	REZGO_DIR."/error.php");
 		
 	}
 	

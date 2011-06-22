@@ -4,7 +4,7 @@ Donate link: http://www.rezgo.com/
 Tags: tours, activities, events, attractions, booking, reservation, ticketing, e-commerce, business, rezgo
 Requires at least: 3.0.0
 Tested up to: 3.1.2
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 
 Connect WordPress to your Rezgo account and accept online bookings directly on your website.
 
@@ -60,7 +60,8 @@ If you need help getting set-up, Rezgo support is only a click or phone call awa
 = Important Notes =
 
 1. The Rezgo plug-in requires that you have permalinks enabled in your WordPress settings. You must use a permalink structure other than the default structure.  You can update your permalink structure by going to Settings > Permalinks in your WordPress admin.
-2. If you DO NOT have a secure certificate enabled on your website, you should choose the option "Forward secure page to Rezgo".
+2. The Rezgo plug-in is not supported on posts, it will only function on pages.
+3. If you DO NOT have a secure certificate enabled on your website, you should choose the option "Forward secure page to Rezgo".
 
 == Frequently Asked Questions ==
 
@@ -76,21 +77,10 @@ This is probably because you do not have a secure certificate installed correctl
 
 No, the Rezgo WordPress Plugin needs to connect to your account via the Rezgo XML API.  Without your Rezgo credentials (specifically your Company Code (CID) and API Key) the Rezgo WordPress Plugin will not function.
 
-= Can I change the look and feel of the booking engine? =
-
-Yes, absolutely.  The default display templates are stored in the "default" folder.  You can either edit these templates or you can copy the folder and rename it.  Make sure to update your configuration settings with the new template folder name.  Note that updates to the plugin may overwrite changes you make to the default templates, so creating a new folder is the preferred option.
-
 = Can I manage credit card payments on my WordPress site? =
 
 Yes, the Rezgo WordPress plugin has the ability to handle credit card payments.  Make sure to configure your Rezgo account to connect to your payment gateway.  Rezgo supports a growing list of Global payment processors including Authorize.net, PayTrace, Chase Paymentech, Beanstream, Ogone, Eway, and many others.  In order for your site to handle payments, you will need to install a secure certificate.  Check with your web host if you need help installing a secure certificate.  If you do not wish to set-up a secure certificate, you can have the secure booking complete on your Rezgo white label booking engine.
 
-= Will the plugin slow down my site? =
-
-No, it's highly unlikely.  The Rezgo plugin is based on the same code as the Rezgo white label booking engine used by hundreds of tour and activity companies.  The plugin connects to the Rezgo XML API which has been optimized to deliver XML results.  Depending on where your WordPress website is hosted, there may be some delay in connecting to the Rezgo server.  If you are experiencing an unreasonable lag in responses, we recommend you consider hosting your website with BlueHost (http://www.tkqlhce.com/click-3178558-10376740).
-
-= Can I add functionality to the Rezgo WordPress Plugin? =
-
-Yes, you are free to add functionality to the display templates.  We recommend you create a new copy of the templates as updates to the plugin may overwrite any changes you make to the default templates.
 
 == Screenshots ==
 
@@ -100,6 +90,12 @@ Yes, you are free to add functionality to the display templates.  We recommend y
 4. Once a customer has chosen a date, they are returned to the details page with the price options available for the option selected.  Customers can enter a promotional code if available, enter the number of passengers or guests for each price level, and continue on to the secure booking page.  If the WordPress site is secure, the transaction will complete on the WordPress site.  If however, there is no secure certificate, the transaction will complete on your Rezgo hosted booking engine.
 
 == Changelog ==
+
+= 1.4.2 =
+* Fixed a number of issues with directory pathing.
+* Changed template location to match new pathing info.
+* Added support for WordPress Multisite.
+* Plugin directory name changed.
 
 = 1.4.1 =
 * Fixed a bug with the details links on the calendar when the month auto-advanced.
