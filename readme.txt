@@ -4,11 +4,14 @@ Donate link: http://www.rezgo.com/
 Tags: tours, activities, events, attractions, booking, reservation, ticketing, e-commerce, business, rezgo
 Requires at least: 3.0.0
 Tested up to: 3.1.2
-Stable tag: 1.4.2
+Stable tag: 1.4.3
 
-Connect WordPress to your Rezgo account and accept online bookings directly on your website.
+This version of the Rezgo plugin has been discontinued, please use the latest Rezgo Online Booking plugin.
 
 == Description ==
+
+> This version of the Rezgo plugin has been discontinued. For the latest version of the Rezgo plugin please download the <a href="http://wordpress.org/extend/plugins/rezgo-online-booking/">Rezgo Online Booking Plugin</a>.
+
 
 **Rezgo** is a cloud based software as a service booking system that gives businesses the ability to manage their tour or activity inventory, manage reservations, and process credit card payments. This plugin is a full featured front-end booking engine that connects your WordPress site to your Rezgo account.
 
@@ -38,58 +41,27 @@ If you need help getting set-up, Rezgo support is only a click or phone call awa
     
 == Installation ==
 
-= Install the Rezgo Booking Plugin =
+> This version of the Rezgo plugin has been discontinued. For the latest version of the Rezgo plugin please download the <a href="http://wordpress.org/extend/plugins/rezgo-online-booking/">Rezgo Online Booking Plugin</a>.
 
-1. Install the Rezgo Booking plugin in your WordPress admin by going to 'Plugins / Add New' and searching for *'Rezgo'* ** OR ** upload the `rezgo` folder to the `/wp-content/plugins/` directory
-2. Activate the Rezgo plugin through the 'Plugins' menu in WordPress
-3. Add your Rezgo account information in the plugin settings
-4. Use the shortcode [rezgo_shortcode] in your page content
-5. Or place `<?php do_action('rezgo_tpl_display'); ?>` in your templates
-	
-= Plugin Configuration and Settings =
-
-1. Sign-up for a Rezgo account at http://www.rezgo.com
-2. Setup your inventory and configure your account on Rezgo.
-3. Set-up your payment methods in Settings > Payment Methods
-4. Activate (Turn on) your Rezgo account (a credit card is required).
-4. Make sure the Rezgo booking plugin is activated in WordPress.
-5. Copy your Company Code and XML API from your Rezgo Settings.
-6. If you would like to use the included Rezgo Contact Form, you may want to get a ReCaptcha API Key.
-7. Create a Page and embed the Rezgo booking engine by using the shortcode: [rezgo_shortcode]
-
-= Important Notes =
-
-1. The Rezgo plug-in requires that you have permalinks enabled in your WordPress settings. You must use a permalink structure other than the default structure.  You can update your permalink structure by going to Settings > Permalinks in your WordPress admin.
-2. The Rezgo plug-in is not supported on posts, it will only function on pages.
-3. If you DO NOT have a secure certificate enabled on your website, you should choose the option "Forward secure page to Rezgo".
+For instructions on installation please visit the updated <a href="http://wordpress.org/extend/plugins/rezgo-online-booking/installation/">Rezgo Online Booking plugin installation page</a>.
 
 == Frequently Asked Questions ==
 
-= I'm getting a PHP error when displaying the tour page? =
+> This version of the Rezgo plugin has been discontinued. For the latest version of the Rezgo plugin please download the <a href="http://wordpress.org/extend/plugins/rezgo-online-booking/">Rezgo Online Booking Plugin</a>.
 
-This is most likely because you are using the default link structure in WordPress.  The Rezgo plug-in requires that you use permalinks in order to show the Rezgo content correctly.
-
-= When I click on the book now button I get a page not found or server error? =
-
-This is probably because you do not have a secure certificate installed correctly on your site.  If this is the case, or if you just don't know, we recommend you chose the "Forward secure page to Rezgo" option.
-
-= Can I use the Rezgo WordPress Plugin without a Rezgo Account? =
-
-No, the Rezgo WordPress Plugin needs to connect to your account via the Rezgo XML API.  Without your Rezgo credentials (specifically your Company Code (CID) and API Key) the Rezgo WordPress Plugin will not function.
-
-= Can I manage credit card payments on my WordPress site? =
-
-Yes, the Rezgo WordPress plugin has the ability to handle credit card payments.  Make sure to configure your Rezgo account to connect to your payment gateway.  Rezgo supports a growing list of Global payment processors including Authorize.net, PayTrace, Chase Paymentech, Beanstream, Ogone, Eway, and many others.  In order for your site to handle payments, you will need to install a secure certificate.  Check with your web host if you need help installing a secure certificate.  If you do not wish to set-up a secure certificate, you can have the secure booking complete on your Rezgo white label booking engine.
+For frequently asked questions please visit the updated <a href="http://wordpress.org/extend/plugins/rezgo-online-booking/faq/">Rezgo Online Booking plugin frequently asked questions page</a>.
 
 
 == Screenshots ==
 
-1. Your tours and activities will display in a list on your default tour page.  From the tour page, your customers will be able to search for available tours and activities by using the date search at the top of the page, searching your items using keywords, or browsing based on tags.
-2. Detail pages are designed to provide your customers with all the information they need to make a booking decision.  They can view detailed information, browse your image gallery, or watch videos.  Visitors can also share your detail page on Twitter, Facebook, TripIt, Travelmuse, or Duffle.
-3. When customers choose a date, they are presented with a list of options.  Customers can then choose a preferred option in order to continue the booking process.
-4. Once a customer has chosen a date, they are returned to the details page with the price options available for the option selected.  Customers can enter a promotional code if available, enter the number of passengers or guests for each price level, and continue on to the secure booking page.  If the WordPress site is secure, the transaction will complete on the WordPress site.  If however, there is no secure certificate, the transaction will complete on your Rezgo hosted booking engine.
+> This version of the Rezgo plugin has been discontinued. For the latest version of the Rezgo plugin please download the <a href="http://wordpress.org/extend/plugins/rezgo-online-booking/">Rezgo Online Booking Plugin</a>.
+
+For screenshots please visit the updated <a href="http://wordpress.org/extend/plugins/rezgo-online-booking/screenshots/">Rezgo Online Booking plugin screenshots page</a>.
 
 == Changelog ==
+
+= 1.4.3 =
+* Deprecated Rezgo plugin and replaced with Rezgo Online Booking plugin
 
 = 1.4.2 =
 * Fixed a number of issues with directory pathing.
