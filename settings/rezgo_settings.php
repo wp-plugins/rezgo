@@ -19,7 +19,8 @@ function rezgo_register_settings()
     register_setting('rezgo_options', 'rezgo_forward_secure');
     register_setting('rezgo_options', 'rezgo_secure_url');
 
-    wp_register_style('rezgo_settings_css', rezgo_embed_settings_css('settings.css'));
+    wp_register_style('rezgo_settings_css', plugins_url('/css/settings.css', __FILE__));
+    wp_register_script('rezgo_settings_js', plugins_url('/js/jquery.tools.min.js', __FILE__));
 		
 		if (!get_option('rezgo_version')) {
 			add_option('rezgo_version', REZGO_PLUGIN_VERSION);
@@ -39,6 +40,7 @@ function rezgo_plugin_menu()
 function rezgo_plugin_admin_styles()
 {
     wp_enqueue_style('rezgo_settings_css');
+    wp_enqueue_script('rezgo_settings_js');
 }
 
 function rezgo_plugin_settings_link($links)

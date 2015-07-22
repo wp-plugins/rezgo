@@ -1,4 +1,3 @@
-<script src="<?= rezgo_embed_settings_js('jquery.tools.min.js') ?>" type="text/javascript"></script>
 
 <div class="wrap" id="rezgo_settings">
 <img src="<?= rezgo_embed_settings_image('logo_rezgo.png') ?>"/>
@@ -49,7 +48,9 @@
 
             if (cid && key) {
                 $('#check_values').html('<img src="<?= rezgo_embed_settings_image('load.gif') ?>">');
-                $('#check_values').load('/settings_ajax.php?cid=' + cid.trim() + '&key=' + key.trim());
+                $('#check_values').load('<?=REZGO_URL_BASE.'/settings/settings_ajax.php'?>?cid=' + cid.trim() + '&key=' + key.trim());
+								
+								
             } else {
                 reset_check();
             }
