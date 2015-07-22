@@ -27,8 +27,8 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkCWu6MoROFlsRGoqFj-AXPEApsVjyTiA&sensor=false&libraries=places"></script>		
 
-<script type="text/javascript" src="<?=$site->path?>/js/jquery.selectboxes.pack.js"></script>
-<script type="text/javascript" src="<?=$site->path?>/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="<?=$site->path?>/js/jquery.selectboxes.min.js"></script>
+<script type="text/javascript" src="<?=$site->path?>/js/jquery.validate.js"></script><!-- .min not working -->
 
 <? if (isset($captcha_error)) { ?>
 <script type="text/javascript">

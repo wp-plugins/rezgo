@@ -26,7 +26,7 @@
 ?>
 	
 
-<script type="text/javascript" src="<?=$site->path?>/js/jquery.selectboxes.pack.js"></script>
+<script type="text/javascript" src="<?=$site->path?>/js/jquery.selectboxes.js"></script><!-- .min not working -->
 <script type="text/javascript" src="<?=$site->path?>/js/jquery.validate.min.js"></script>
 
 <? if (isset($captcha_error)) { ?>
